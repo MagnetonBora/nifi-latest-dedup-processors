@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache.nifi</groupId>
+        <artifactId>nifi-extension-bundles</artifactId>
+        <version>2.12.0</version>
+    </parent>
+
+    <groupId>com.example.nifi</groupId>
+    <artifactId>nifi-latest-dedup-bundle</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <nifi.version>2.12.0</nifi.version>
+    </properties>
+
+    <modules>
+        <module>nifi-latest-dedup-processors</module>
+        <module>nifi-latest-dedup-nar</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <!-- The NiFi parent only allows SNAPSHOT dependencies from org.apache.nifi;
+                 also allow this project's own modules. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-maven-version</id>
+                        <configuration>
+                            <rules>
+                                <requireReleaseDeps>
+                                    <excludes combine.children="append">
+                                        <exclude>${project.groupId}:*</exclude>
+                                    </excludes>
+                                </requireReleaseDeps>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

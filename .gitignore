@@ -1,0 +1,59 @@
+# --- Java ---
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.log
+hs_err_pid*
+replay_pid*
+
+# --- Maven ---
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.flattened-pom.xml
+# Maven Wrapper: keep the wrapper config, ignore a downloaded wrapper jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# --- Project build (Makefile) ---
+dist/
+.cache/
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# --- Eclipse ---
+.project
+.classpath
+.settings/
+.factorypath
+.apt_generated/
+.apt_generated_tests/
+
+# --- VS Code ---
+.vscode/
+
+# --- NetBeans ---
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# --- Vim / Emacs ---
+*.swp
+*.swo
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
