@@ -2,12 +2,6 @@
 
 A custom NiFi processor that removes duplicate records inside a single FlowFile. For every key it keeps only the record with the **latest timestamp**.
 
-It does the same thing as this SQL:
-
-```sql
-ROW_NUMBER() OVER (PARTITION BY id ORDER BY timestamp DESC) = 1
-```
-
 Input (NDJSON):
 
 ```json
