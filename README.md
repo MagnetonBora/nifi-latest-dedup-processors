@@ -209,3 +209,24 @@ Both loggers auto-terminate `success`, so FlowFiles are dropped once they have b
 ```
 
 The processor is registered via `META-INF/services/org.apache.nifi.processor.Processor`. The NAR does **not** bundle `nifi-api`, `nifi-record` or the record serialization service API. These come from the parent NAR, which lets the processor work with the standard Record Reader and Writer controller services.
+
+## Versions and tags
+
+This repository keeps evolving, and future editions of the workshop may change it. Every delivery of the workshop is marked with a Git tag on GitHub, so you can always get exactly the version that was used during your course.
+
+| Tag | Course | Dates |
+|---|---|---|
+| [`workshop-2026-11-norway`](https://github.com/MagnetonBora/nifi-latest-dedup-processors/tree/workshop-2026-11-norway) | Apache NiFi workshop, Norway | November 23–25, 2026 |
+
+To clone the repository at a specific tag:
+
+```bash
+git clone --branch workshop-2026-11-norway https://github.com/MagnetonBora/nifi-latest-dedup-processors.git
+```
+
+If you already have a clone:
+
+```bash
+git fetch --tags
+git checkout tags/workshop-2026-11-norway -b workshop-2026-11-norway
+```
